@@ -11,8 +11,7 @@ def print_help():
     print(" grade [document_path]           - Description")
     print(" generate [document_path]        - Description")
     print(" help                            - Show this help message")
-    print(" exit                            - Exit the application")
-    print("\n")
+    print(" exit                            - Exit the application\n")
 
 def application_cli():
     print("\n---- Welcome to AutoTeacher AI ----")
