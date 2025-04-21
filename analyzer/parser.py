@@ -1,0 +1,1 @@
+# parser.py reads the documents (PDF, DOCX, text, etc)
