@@ -7,11 +7,18 @@ def create_doc(db_name, filename, content):
     try:
         conn = sqlite3.connect(db_name)
         cursor = conn.cursor()
-        cursor.execute("INSERT OR REPLACE INTO documents (filename, content) VALUES (?, ?)", (filename, content))
-        conn.commit()
-        cursor.close()
-        print(f"Document {filename} has been created")
-        return True
+
+        # check if the document already exists
+        cursor.execute("SELECT 1 FROM documents WHERE filename = ?", (filename,))
+        if cursor.fetchone():
+            print(f"Document '{filename}' already exists. Please delete it first or edit it.")
+            return False
+        else:
+            cursor.execute("INSERT INTO documents (filename, content) VALUES (?, ?)", (filename, content))
+            conn.commit()
+            cursor.close()
+            print(f"Document {filename} has been created")
+            return True
     except Exception as e:
         print(f"Error creating {filename}: {e}")
         return False
@@ -62,4 +69,24 @@ def delete_doc(db_name, filename):
             return False
     except Exception as e:
         print(f"Error deleting {filename}: {e}")
+        return False
+
+def list_doc(db_name):
+    try:
+        conn = sqlite3.connect(db_name)
+        cursor = conn.cursor()
+        cursor.execute("SELECT filename FROM documents LIMIT 10")
+        return cursor.fetchall()
+    except Exception as e:
+        print(f"Error listing documents: {e}")
+        return False
+
+def count_doc(db_name):
+    try:
+        conn = sqlite3.connect(db_name)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(filename) FROM documents")
+        return cursor.fetchone()
+    except Exception as e:
+        print(f"Error counting documents: {e}")
         return False

@@ -1,18 +1,20 @@
 # cli.py defines a simple, interactive cli for users
 import os
 from database.operations import *
+from analyzer.parser import *
 
 # display available commands
 def print_help():
     print("\nAvailable commands:")
     print(" create <document_path>                              - Upload a PDF, DOCx, or .txt document directly from your computer")
     print(" read [document_name]                                - Read document")
-    print(" edit [document_name]                                - Edit an existing document")
+    print(" edit [document_name]                                - Edit an existing document directly with input text")
     print(" delete [document_name]                              - Delete a document")
     print(" feedback [document_name]                            - Generate feedback for an existing document")
     print(" grade [document_name]                               - Auto-grade an existing document")
     print(" generate [document_name] [content_type] [number]    - Generate studying and testing material for an existing document.")
     print(" content                                             - Display content type you can generate.")
+    print(" list                                                - Display all current documents")
     print(" help                                                - Display this help message")
     print(" exit                                                - Exit the application")
 
@@ -33,7 +35,7 @@ def application_cli():
                 raise FileNotFoundError("Database file does not exist.")
             break
         except Exception as e:
-            print(f"{e} Try another one.")
+            print(f"{e} Try another database.")
     print("Type 'help' for available commands.\n")
 
     while True:
@@ -58,8 +60,9 @@ def application_cli():
                     print("Please specify a document name.")
                     continue
                 load_parts = parts[1].split(maxsplit=1)
-                file_name = load_parts[0]
-                create_doc(db_name, file_name, "Default file content")
+                file_path = load_parts[0]
+                file_content = load_document(file_path)
+                create_doc(db_name, file_path, file_content)
 
             elif command == "read":
                 if len(parts) < 2:
@@ -69,7 +72,7 @@ def application_cli():
                 file_name = load_parts[0]
                 read_content = read_doc(db_name,file_name)
                 if read_content:
-                    print(f"Content: {read_content}")
+                    print(f"{read_content}")
 
             elif command == "edit":
                 if len(parts) < 2:
@@ -77,7 +80,8 @@ def application_cli():
                     continue
                 load_parts = parts[1].split(maxsplit=1)
                 file_name = load_parts[0]
-                edit_doc(db_name,file_name,"Edited file content")
+                new_content = input("Directly enter the new content of the document: ")
+                edit_doc(db_name,file_name,new_content)
 
             elif command == "delete":
                 if len(parts) < 2:
@@ -98,6 +102,16 @@ def application_cli():
 
             elif command == "content":
                 print_content()
+
+            elif command == "list":
+                count = count_doc(db_name)
+                print(f"{count[0]} documents: ")
+                documents = list_doc(db_name)
+                # only print first 10
+                for doc in documents:
+                    print(doc[0])
+                if (count[0] > 10):
+                    print("...")
 
             else:
                 print(f"Unknown command: {command}. Type 'help' for available commands.")
