@@ -5,15 +5,24 @@ from database.operations import *
 # display available commands
 def print_help():
     print("\nAvailable commands:")
-    print(" create <document_path>          - Upload a PDF, DOCx, or .txt document directly from your computer")
-    print(" read [document_name]            - Read document")
-    print(" edit [document_name]            - Edit an existing document")
-    print(" delete [document_name]          - Delete a document")
-    print(" feedback [document_name]        - Generate feedback for an existing document")
-    print(" grade [document_name]          - Auto-grade an existing document")
-    print(" generate [document_name]        - Generate studying and testing material for an existing document")
-    print(" help                            - Show this help message")
-    print(" exit                            - Exit the application")
+    print(" create <document_path>                              - Upload a PDF, DOCx, or .txt document directly from your computer")
+    print(" read [document_name]                                - Read document")
+    print(" edit [document_name]                                - Edit an existing document")
+    print(" delete [document_name]                              - Delete a document")
+    print(" feedback [document_name]                            - Generate feedback for an existing document")
+    print(" grade [document_name]                               - Auto-grade an existing document")
+    print(" generate [document_name] [content_type] [number]    - Generate studying and testing material for an existing document.")
+    print(" content                                             - Display content type you can generate.")
+    print(" help                                                - Display this help message")
+    print(" exit                                                - Exit the application")
+
+def print_content():
+    print("\nAvailable content types:")
+    print(" mc                  - Multiple choice questions and answers")
+    print(" tf                  - True or false questions and answers")
+    print(" fill                - Fill in the blank questions and answers")
+    print(" fc                  - Flashcards with answers")
+    print(" sg                  - Study guide with answers (will always get 1)")
 
 def application_cli():
     print("\n---- Welcome to AutoTeacher AI ----")
@@ -86,6 +95,9 @@ def application_cli():
 
             elif command == "generate":
                 return True
+
+            elif command == "content":
+                print_content()
 
             else:
                 print(f"Unknown command: {command}. Type 'help' for available commands.")
