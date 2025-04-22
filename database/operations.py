@@ -17,31 +17,32 @@ def create_doc(db_name, filename, content):
         return False
 
 # read document
-def read_doc(db_name, filename):
+def read_doc(db_name, file_name):
     try:
         conn = sqlite3.connect(db_name)
         cursor = conn.cursor()
-        cursor.execute("SELECT content FROM documents WHERE filename = ?", (filename, ))
+        cursor.execute("SELECT content FROM documents WHERE filename = ?", (file_name, ))
         conn.commit()
         content = cursor.fetchone()
         cursor.close()
-        return content[0] if content else False
+        if content[0]:
+            return content[0]
     except Exception as e:
-        print(f"Error reading {filename}: {e}")
+        print(f"Error reading {file_name}: {e}")
         return False
 
 # edit document
-def edit_doc(db_name, filename, new_content):
+def edit_doc(db_name, file_name, new_content):
     try:
         conn = sqlite3.connect(db_name)
         cursor = conn.cursor()
-        cursor.execute("UPDATE documents SET content = ? WHERE filename = ?", (new_content, filename))
+        cursor.execute("UPDATE documents SET content = ? WHERE filename = ?", (new_content, file_name))
         conn.commit()
         cursor.close()
-        print(f"Document {filename} has been updated")
+        print(f"Document {file_name} has been updated")
         return True
     except Exception as e:
-        print(f"Error editing {filename}: {e}")
+        print(f"Error editing {file_name}: {e}")
         return False
 
 # delete document

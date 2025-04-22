@@ -1,20 +1,30 @@
 # cli.py defines a simple, interactive cli for users
+import os
+from database.operations import *
 
 # display available commands
 def print_help():
     print("\nAvailable commands:")
-    print(" create <document_path>          - Description")
-    print(" read <document_path>            - Description")
-    print(" edit <document_path>            - Description")
-    print(" delete <document_path>          - Description")
-    print(" feedback <document_path>        - Description")
-    print(" grade [document_path]           - Description")
-    print(" generate [document_path]        - Description")
+    print(" create <document_path>          - Upload a PDF, DOCx, or .txt document directly from your computer")
+    print(" read [document_name]            - Read document")
+    print(" edit [document_name]            - Edit an existing document")
+    print(" delete [document_name]          - Delete a document")
+    print(" feedback [document_name]        - Generate feedback for an existing document")
+    print(" grade [document_name]          - Auto-grade an existing document")
+    print(" generate [document_name]        - Generate studying and testing material for an existing document")
     print(" help                            - Show this help message")
-    print(" exit                            - Exit the application\n")
+    print(" exit                            - Exit the application")
 
 def application_cli():
     print("\n---- Welcome to AutoTeacher AI ----")
+    while True:
+        try:
+            db_name = input("Enter the database you are using in the format [db_name].db: ")
+            if not os.path.isfile(db_name):
+                raise FileNotFoundError("Database file does not exist.")
+            break
+        except Exception as e:
+            print(f"{e} Try another one.")
     print("Type 'help' for available commands.\n")
 
     while True:
@@ -27,11 +37,58 @@ def application_cli():
             parts = user_input.split(maxsplit=1)
             command = parts[0].lower() # gets first word from input
 
+            # choose correct function based on input
             if command == "exit":
                 break
 
             elif command == "help":
                 print_help()
+
+            elif command == "create":
+                if len(parts) < 2:
+                    print("Please specify a document name.")
+                    continue
+                load_parts = parts[1].split(maxsplit=1)
+                file_name = load_parts[0]
+                create_doc(db_name, file_name, "Default file content")
+
+            elif command == "read":
+                if len(parts) < 2:
+                    print("Please specify a document name.")
+                    continue
+                load_parts = parts[1].split(maxsplit=1)
+                file_name = load_parts[0]
+                read_content = read_doc(db_name,file_name)
+                if read_content:
+                    print(f"Content: {read_content}")
+
+            elif command == "edit":
+                if len(parts) < 2:
+                    print("Please specify a document name.")
+                    continue
+                load_parts = parts[1].split(maxsplit=1)
+                file_name = load_parts[0]
+                edit_doc(db_name,file_name,"Edited file content")
+
+            elif command == "delete":
+                if len(parts) < 2:
+                    print("Please specify a document name.")
+                    continue
+                load_parts = parts[1].split(maxsplit=1)
+                file_name = load_parts[0]
+                delete_doc(db_name,file_name)
+
+            elif command == "feedback":
+                return True
+
+            elif command == "grade":
+                return True
+
+            elif command == "generate":
+                return True
+
+            else:
+                print(f"Unknown command: {command}. Type 'help' for available commands.")
 
         except KeyboardInterrupt:
             print("\nExiting...")
