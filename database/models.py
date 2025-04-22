@@ -1,6 +1,5 @@
 # models.py outlines the table schema for the files
 import sqlite3
-db_name = "test.db"
 
 def create_table(db_name):
     try:
@@ -17,4 +16,4 @@ def create_table(db_name):
         conn.commit()
         conn.close()
     except Exception as e:
-        print(f"Error creating database: {e}")
+        print(f"Error creating table: {e}")

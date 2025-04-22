@@ -50,10 +50,15 @@ def delete_doc(db_name, filename):
         conn = sqlite3.connect(db_name)
         cursor = conn.cursor()
         cursor.execute("DELETE FROM documents WHERE filename = ?", (filename,))
+        deleted = cursor.rowcount > 0
         conn.commit()
         cursor.close()
-        print(f"Document {filename} has been deleted")
-        return True
+        if deleted:
+            print(f"Document {filename} has been deleted")
+            return True
+        else:
+            print(f"Document {filename} not found, nothing deleted")
+            return False
     except Exception as e:
         print(f"Error deleting {filename}: {e}")
         return False
