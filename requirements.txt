@@ -3,3 +3,4 @@ coverage
 openai
 fitz
 docx
+dotenv

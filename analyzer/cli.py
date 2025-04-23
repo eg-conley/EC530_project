@@ -1,7 +1,10 @@
 # cli.py defines a simple, interactive cli for users
-import os
 from database.operations import *
 from analyzer.parser import *
+from analyzer.feedback import *
+from analyzer.grader import *
+from analyzer.generator import *
+from outputs.writeback import *
 
 # display available commands
 def print_help():
@@ -11,7 +14,7 @@ def print_help():
     print(" edit [document_name]                                - Edit an existing document directly with input text")
     print(" delete [document_name]                              - Delete a document")
     print(" feedback [document_name]                            - Generate feedback for an existing document")
-    print(" grade [document_name]                               - Auto-grade an existing document")
+    print(" grade [document_name] [rubric_name]                 - Auto-grade an existing document")
     print(" generate [document_name] [content_type] [number]    - Generate studying and testing material for an existing document.")
     print(" content                                             - Display content type you can generate.")
     print(" list                                                - Display all current documents")
@@ -92,13 +95,77 @@ def application_cli():
                 delete_doc(db_name,file_name)
 
             elif command == "feedback":
-                return True
+                if len(parts) < 2:
+                    print("Please specify a document name.")
+                    continue
+                load_parts = parts[1].split(maxsplit=1)
+                file_name = load_parts[0]
+                file_content = read_doc(db_name,file_name)
+                if file_content:
+                    feedback = provide_feedback(file_content)
+                    print(feedback)
+                    write = input("Do you want to write this to a file? (y/n): ")
+                    if write.lower() == "y":
+                        write_file_name = input("Enter the new file name: ")
+                        with open(write_file_name,"w") as file:
+                            return file.write(feedback)
+                    else:
+                        continue
 
             elif command == "grade":
-                return True
+                if len(parts) < 3:
+                    print("Please specify a document name and rubric document name.")
+                    continue
+                # get file content
+                load_parts = parts[1].split(maxsplit=1)
+                file_name = load_parts[0]
+                file_content = read_doc(db_name,file_name)
+                # get rubric content
+                load_parts_2 = load_parts[1].split(maxsplit=1)
+                rubric_name = load_parts_2[0]
+                rubric_content = read_doc(db_name,rubric_name)
+                if file_content and rubric_content:
+                    grade = grade_document(file_content, rubric_content)
+                    print(grade)
+                    write_back(grade)
 
             elif command == "generate":
-                return True
+                if len(parts) < 4:
+                    print("Please specify a document name, content type, and number.")
+                    continue
+                # get file content
+                load_parts = parts[1].split(maxsplit=1)
+                file_name = load_parts[0]
+                file_content = read_doc(db_name, file_name)
+                # get content type
+                load_parts_2 = load_parts[1].split(maxsplit=1)
+                content_type = load_parts_2[0]
+                # get number
+                load_parts_3 = load_parts_2[1].split(maxsplit=1)
+                number = load_parts_3[0]
+                if file_content and content_type and number:
+                    if content_type == "mc":
+                        mc = create_mc(file_content,number)
+                        print(mc)
+                        write_back(mc)
+                    elif content_type == "tf":
+                        tf = create_tf(file_content,number)
+                        print(tf)
+                        write_back(tf)
+                    elif content_type == "fill":
+                        fill = create_fill(file_content,number)
+                        print(fill)
+                        write_back(fill)
+                    elif content_type == "fc":
+                        fc = create_fc(file_content,number)
+                        print(fc)
+                        write_back(fc)
+                    elif content_type == "sg":
+                        sg = create_sg(file_content)
+                        print(sg)
+                        write_back(sg)
+                    else:
+                        print("Content type not supported.")
 
             elif command == "content":
                 print_content()
