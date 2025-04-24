@@ -34,13 +34,12 @@ Welcome to AutoTeacher AI, the portal where all of your document needs can be fu
 
 ## File Structure
 EC530_project/ \
-|-- analyzer/
-  |-- 
-|-- database/
-|-- outputs/
-|-- tests/
-|-- requirements.txt
-
+|--client_server # files for testing client-server architecture, not needed to run \
+&nbsp;&nbsp;&nbsp;|--... \
+|-- client_p2p.py # "client" side of p2p \
+|-- main.py # main application to run \
+|-- message_data.py # handles + stores message data \
+|-- server_p2p.py # "server" side of p2p
 ## How to Use
 ### Requirements
 
