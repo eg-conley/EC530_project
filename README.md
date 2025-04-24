@@ -62,10 +62,11 @@ EC530_project/ \
  3. 
  4. 
 
-### Example Use
+### Example Uses
  
 ## Future Improvements
-
+* Build out UI and create better UX
+* Support additional file types like .rtf, .md, etc
 
 ## Acknowledgements
-
+* ChatGPT helped with file structure and generating tests, modified as needed
