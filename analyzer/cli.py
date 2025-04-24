@@ -104,16 +104,10 @@ def application_cli():
                 if file_content:
                     feedback = provide_feedback(file_content)
                     print(feedback)
-                    write = input("Do you want to write this to a file? (y/n): ")
-                    if write.lower() == "y":
-                        write_file_name = input("Enter the new file name: ")
-                        with open(write_file_name,"w") as file:
-                            return file.write(feedback)
-                    else:
-                        continue
+                    write_back(feedback)
 
             elif command == "grade":
-                if len(parts) < 3:
+                if len(parts) < 2:
                     print("Please specify a document name and rubric document name.")
                     continue
                 # get file content
@@ -130,7 +124,7 @@ def application_cli():
                     write_back(grade)
 
             elif command == "generate":
-                if len(parts) < 4:
+                if len(parts) < 2:
                     print("Please specify a document name, content type, and number.")
                     continue
                 # get file content

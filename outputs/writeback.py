@@ -5,4 +5,6 @@ def write_back(content):
     if write_flag.lower() == "y":
         write_file_name = input("Enter the new file name: ")
         with open(write_file_name, "w") as file:
-            return file.write(grade)
+            return file.write(content)
+    else:
+        return None
