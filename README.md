@@ -35,22 +35,22 @@ Welcome to AutoTeacher AI, the portal where all of your document needs can be fu
 ## Relevant File Structure
 EC530_project/ \
 |-- analyzer/ \
-  |-- cli.py
-  |-- feedback.py
-  |-- generator.py
-  |-- grader.py
-  |-- llm.py
-  |-- parser.py
+&nbsp;&nbsp;&nbsp;  |-- cli.py \
+&nbsp;&nbsp;&nbsp;  |-- feedback.py \
+&nbsp;&nbsp;&nbsp;  |-- generator.py \
+&nbsp;&nbsp;&nbsp;  |-- grader.py \
+&nbsp;&nbsp;&nbsp;  |-- llm.py \
+&nbsp;&nbsp;&nbsp;  |-- parser.py \
 |-- database/ \
-  |-- models.py
-  |-- operations.py
+&nbsp;&nbsp;&nbsp;  |-- models.py \
+&nbsp;&nbsp;&nbsp;  |-- operations.py \
 |-- outputs/ \
-  |-- writeback.py
+&nbsp;&nbsp;&nbsp;  |-- writeback.py \
 |-- tests/ \
-  |-- analyzer_test.py
-  |-- database_test.py
-  |-- outputs_test.py
-|--  main.py
+&nbsp;&nbsp;&nbsp;  |-- analyzer_test.py \
+&nbsp;&nbsp;&nbsp;  |-- database_test.py \
+&nbsp;&nbsp;&nbsp;  |-- outputs_test.py \
+|--  main.py \
 |-- requirements.txt 
 
 ## How to Use
