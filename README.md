@@ -70,3 +70,4 @@ EC530_project/ \
 
 ## Acknowledgements
 * ChatGPT helped with file structure and generating tests, modified as needed
+* OpenAI API: https://platform.openai.com/docs/overview
