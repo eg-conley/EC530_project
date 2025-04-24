@@ -10,7 +10,7 @@
  7. [Acknowledgements](#acknowledgements)
 
 ## Overview
-Welcome to AutoTeacher AI, the portal where all of your document needs can be fulfilled.
+Welcome to AutoTeacher AI, the portal where all of your document needs can be fulfilled. With AutoTeacher AI, gather inspiration for tests, study gyudes, 
 
 ## Features
 ⬆️ Upload PDF, DOCX, or txt files you want to work on directly from your computer. You can read, edit, and delete all of the documents later on as needed. \
@@ -63,6 +63,8 @@ EC530_project/ \
  4. 
 
 ### Example Uses
+* Command 1
+>
  
 ## Future Improvements
 * Build out UI and create better UX
