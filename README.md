@@ -32,14 +32,27 @@ Welcome to AutoTeacher AI, the portal where all of your document needs can be fu
  10. help - Display this help message
  11. exit - Exit the application
 
-## File Structure
+## Relevant File Structure
 EC530_project/ \
-|--client_server # files for testing client-server architecture, not needed to run \
-&nbsp;&nbsp;&nbsp;|--... \
-|-- client_p2p.py # "client" side of p2p \
-|-- main.py # main application to run \
-|-- message_data.py # handles + stores message data \
-|-- server_p2p.py # "server" side of p2p
+|-- analyzer/ \
+  |-- cli.py
+  |-- feedback.py
+  |-- generator.py
+  |-- grader.py
+  |-- llm.py
+  |-- parser.py
+|-- database/ \
+  |-- models.py
+  |-- operations.py
+|-- outputs/ \
+  |-- writeback.py
+|-- tests/ \
+  |-- analyzer_test.py
+  |-- database_test.py
+  |-- outputs_test.py
+|--  main.py
+|-- requirements.txt 
+
 ## How to Use
 ### Requirements
 
