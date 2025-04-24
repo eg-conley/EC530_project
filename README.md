@@ -34,11 +34,12 @@ Welcome to AutoTeacher AI, the portal where all of your document needs can be fu
 
 ## File Structure
 EC530_project/ \
-|--
-|-- \
-|-- \
-|-- \
-|--
+|-- analyzer/
+  |-- 
+|-- database/
+|-- outputs/
+|-- tests/
+|-- requirements.txt
 
 ## How to Use
 ### Requirements
