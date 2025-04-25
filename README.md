@@ -13,7 +13,7 @@
 Welcome to AutoTeacher AI, the portal where all of your document needs can be fulfilled. With AutoTeacher AI, gather inspiration for tests, study guides, and even grade papers with the type of the keyboard.
 
 ## Features
-⬆️ Upload PDF, DOCX, or txt files you want to work on directly from your computer. You can read, edit, and delete all of the documents later on as needed. \
+💻 Upload PDF, DOCX, or txt files you want to work on directly from your computer. You can read, edit, and delete all of the documents later on as needed. \
 🔄 Auto-generate feedback on assignments, papers, and more. \
 💯 Grade student assignments with added justification according to a given rubric. \
 📝 Auto-generate tests with a given number of multiple choice, true or false, or fill in the blank questions. \
@@ -40,10 +40,16 @@ EC530_project/ \
 &nbsp;&nbsp;&nbsp;  |-- generator.py #creates short quizzes, study guides, and other material \
 &nbsp;&nbsp;&nbsp;  |-- grader.py #grades uploaded documents/responses \
 &nbsp;&nbsp;&nbsp;  |-- llm.py #uses OpenAI's API to generate answers to the respective prompts \
-&nbsp;&nbsp;&nbsp;  |-- parser.py #reads the documents (PDF, DOCX, txt)\
+&nbsp;&nbsp;&nbsp;  |-- parser.py #reads the documents (PDF, DOCX, txt) \
 |-- database/ \
 &nbsp;&nbsp;&nbsp;  |-- models.py #outlines the table schema for the files \
 &nbsp;&nbsp;&nbsp;  |-- operations.py #defines CRUD operations for the documents the user will be uploading and analyzing \
+|-- documents/ \
+&nbsp;&nbsp;&nbsp;  |-- Countries_of_the_World.pdf #sample pdf file \
+&nbsp;&nbsp;&nbsp;  |-- Layers_of_the_Ocean_Rubric.pdf #sample pdf file \
+&nbsp;&nbsp;&nbsp;  |-- Layers_of_the_Ocean_.docx #sample docx file \
+&nbsp;&nbsp;&nbsp;  |-- Water_Cycle #sample txt file \
+|-- documents.db #database preloaded with some example documents \
 |-- outputs/ \
 &nbsp;&nbsp;&nbsp;  |-- writeback.py #writes any produced content back to a txt file \
 |-- tests/ \
@@ -52,6 +58,7 @@ EC530_project/ \
 &nbsp;&nbsp;&nbsp;  |-- outputs_test.py #tests output file functions\
 |--  main.py #runs the application and introduces a simple CLI\
 |-- requirements.txt #lists the required packages
+|-- tests.db #database required for test files
 
 ## How to Use
 ### Requirements
@@ -88,7 +95,8 @@ EC530_project/ \
 * `list`
 >
 * `help`
->
+> <img width="973" alt="image" src="https://github.com/user-attachments/assets/939a52dc-1fe4-47c2-b676-f12bfe7f8afd" />
+
 * `exit`
 >
 
