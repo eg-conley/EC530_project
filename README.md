@@ -35,21 +35,21 @@ Welcome to AutoTeacher AI, the portal where all of your document needs can be fu
 ## Relevant File Structure
 EC530_project/ \
 |-- analyzer/ \
-&nbsp;&nbsp;&nbsp;  |-- cli.py \
-&nbsp;&nbsp;&nbsp;  |-- feedback.py \
-&nbsp;&nbsp;&nbsp;  |-- generator.py \
-&nbsp;&nbsp;&nbsp;  |-- grader.py \
-&nbsp;&nbsp;&nbsp;  |-- llm.py \
-&nbsp;&nbsp;&nbsp;  |-- parser.py \
+&nbsp;&nbsp;&nbsp;  |-- cli.py #defines a simple, interactive cli for users \
+&nbsp;&nbsp;&nbsp;  |-- feedback.py #generates feedback on the uploaded documents after they are analyzed \
+&nbsp;&nbsp;&nbsp;  |-- generator.py #creates short quizzes, study guides, and other material \
+&nbsp;&nbsp;&nbsp;  |-- grader.py #grades uploaded documents/responses \
+&nbsp;&nbsp;&nbsp;  |-- llm.py #uses OpenAI's API to generate answers to the respective prompts \
+&nbsp;&nbsp;&nbsp;  |-- parser.py #reads the documents (PDF, DOCX, txt)\
 |-- database/ \
-&nbsp;&nbsp;&nbsp;  |-- models.py \
-&nbsp;&nbsp;&nbsp;  |-- operations.py \
+&nbsp;&nbsp;&nbsp;  |-- models.py #outlines the table schema for the files \
+&nbsp;&nbsp;&nbsp;  |-- operations.py #defines CRUD operations for the documents the user will be uploading and analyzing \
 |-- outputs/ \
-&nbsp;&nbsp;&nbsp;  |-- writeback.py \
+&nbsp;&nbsp;&nbsp;  |-- writeback.py #writes any produced content back to a txt file \
 |-- tests/ \
-&nbsp;&nbsp;&nbsp;  |-- analyzer_test.py \
-&nbsp;&nbsp;&nbsp;  |-- database_test.py \
-&nbsp;&nbsp;&nbsp;  |-- outputs_test.py \
+&nbsp;&nbsp;&nbsp;  |-- analyzer_test.py #tests analyzer file functions \
+&nbsp;&nbsp;&nbsp;  |-- database_test.py #tests database file functions \
+&nbsp;&nbsp;&nbsp;  |-- outputs_test.py #tests output file functions\
 |--  main.py \
 |-- requirements.txt 
 
