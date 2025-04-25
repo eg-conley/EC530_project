@@ -1,4 +1,4 @@
-# AutoTeacher AI 👩‍🏫
+# AutoTeacher AI 👩‍🏫👨‍🏫🧑‍🏫
 
 ## Table of Contents
  1. [Overview](#overview)
@@ -53,9 +53,14 @@ EC530_project/ \
 |-- outputs/ \
 &nbsp;&nbsp;&nbsp;  |-- writeback.py #writes any produced content back to a txt file \
 |-- tests/ \
-&nbsp;&nbsp;&nbsp;  |-- analyzer_test.py #tests analyzer file functions \
+&nbsp;&nbsp;&nbsp;  |-- cli_test.py #tests cli.py functions \
 &nbsp;&nbsp;&nbsp;  |-- database_test.py #tests database file functions \
+&nbsp;&nbsp;&nbsp;  |-- feedback_test #tests feedback.py functions \
+&nbsp;&nbsp;&nbsp;  |-- generator_test #tests generator.py functions \
+&nbsp;&nbsp;&nbsp;  |-- grader_test #tests grader.py functions \
+&nbsp;&nbsp;&nbsp;  |-- llm_test #tests llm.py functions \
 &nbsp;&nbsp;&nbsp;  |-- outputs_test.py #tests output file functions\
+&nbsp;&nbsp;&nbsp;  |-- parser_test #tests parser.py functions \
 |--  main.py #runs the application and introduces a simple CLI\
 |-- requirements.txt #lists the required packages
 |-- tests.db #database required for test files
