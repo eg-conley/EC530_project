@@ -55,6 +55,8 @@ EC530_project/ \
 
 ## How to Use
 ### Requirements
+* Python 3.9 or newer
+* The required packages are in the requirements.txt file
 
 ### Steps
  1. 
