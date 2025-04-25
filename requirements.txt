@@ -1,6 +1,6 @@
 pytest
 coverage
 openai
-fitz
-docx
+PyMuPDF
+python-docx
 dotenv
