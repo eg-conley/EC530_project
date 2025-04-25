@@ -4,7 +4,7 @@
  1. [Overview](#overview)
  2. [Features](#features)
  3. [Command Options](#command-options)
- 4. [File Structure](#relevant-file-structure)
+ 4. [Relevant File Structure](#relevant-file-structure)
  5. [How to Use](#how-to-use)
  6. [Future Improvements](#future-improvements)
  7. [Acknowledgements](#acknowledgements)
