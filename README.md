@@ -89,9 +89,9 @@ EC530_project/ \
 * `grade [document_name] [rubric_name]`
 > <img width="1374" alt="Screenshot 2025-04-25 at 1 04 22 AM" src="https://github.com/user-attachments/assets/ef33fba2-4f1c-4a73-86ab-044c8df47d05" />
 * `generate [document_name] [content_type] [number] `
-> <img width="982" alt="image" src="https://github.com/user-attachments/assets/ca5abf79-1bab-4484-bbef-a0915626acca" />
-> <img width="1176" alt="Screenshot 2025-04-25 at 1 07 57 AM" src="https://github.com/user-attachments/assets/62a2ca49-920a-4184-a00a-62677fdbd05e" />
-> <img width="1375" alt="Screenshot 2025-04-25 at 1 08 42 AM" src="https://github.com/user-attachments/assets/20c5d09f-4028-43f7-b38d-99b2e4c9fe32" />
+> Multiple Choice: <img width="982" alt="image" src="https://github.com/user-attachments/assets/ca5abf79-1bab-4484-bbef-a0915626acca" />
+> Flashcards: <img width="1176" alt="Screenshot 2025-04-25 at 1 07 57 AM" src="https://github.com/user-attachments/assets/62a2ca49-920a-4184-a00a-62677fdbd05e" />
+> Study guide: <img width="1375" alt="Screenshot 2025-04-25 at 1 08 42 AM" src="https://github.com/user-attachments/assets/20c5d09f-4028-43f7-b38d-99b2e4c9fe32" />
 * `content`
 > <img width="547" alt="Screenshot 2025-04-25 at 12 56 14 AM" src="https://github.com/user-attachments/assets/455e88a9-7dc3-4144-8667-242a1003e2ed" />
 * `list`
@@ -100,7 +100,6 @@ EC530_project/ \
 > <img width="961" alt="image" src="https://github.com/user-attachments/assets/5ab27ae9-9e62-42fe-b9f7-cab98e982186" />
 * `exit`
 > <img width="501" alt="Screenshot 2025-04-25 at 1 06 18 AM" src="https://github.com/user-attachments/assets/deb3a70e-48ae-4ddf-bfc4-ff3731a3a30a" />
-
 
 ## Future Improvements
 * Build out UI and create better UX
