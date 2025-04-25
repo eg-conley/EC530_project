@@ -50,8 +50,8 @@ EC530_project/ \
 &nbsp;&nbsp;&nbsp;  |-- analyzer_test.py #tests analyzer file functions \
 &nbsp;&nbsp;&nbsp;  |-- database_test.py #tests database file functions \
 &nbsp;&nbsp;&nbsp;  |-- outputs_test.py #tests output file functions\
-|--  main.py \
-|-- requirements.txt 
+|--  main.py #runs the application and introduces a simple CLI\
+|-- requirements.txt #lists the required packages
 
 ## How to Use
 ### Requirements
