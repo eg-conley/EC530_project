@@ -65,9 +65,33 @@ EC530_project/ \
  4. 
 
 ### Example Uses
-* Command 1
+* command 1 `create`
 >
- 
+* command 2 `read`
+>
+* command 3 `edit`
+>
+* command 4 `delete`
+>
+* command 5 `feedback`
+>
+* command 6 `grade`
+>
+* command 7 `generate`
+>
+* command 8 `generate`
+>
+* command `generate`
+>
+* `content`
+>
+* `list`
+>
+* `help`
+>
+* `exit`
+>
+
 ## Future Improvements
 * Build out UI and create better UX
 * Support additional file types like .rtf, .md, etc
