@@ -40,7 +40,7 @@ def test_list_doc():
 def test_count_doc():
     count = count_doc(TEST_DB)
     assert isinstance(count, tuple)
-    assert count[0] == 7 # would need to change this depending on how many are in the tests.db
+    assert count[0] == 2 # would need to change this depending on how many are in the tests.db
 
 
 # test error cases

@@ -53,6 +53,7 @@ def application_cli():
 
             # choose correct function based on input
             if command == "exit":
+                print("Exiting...")
                 break
 
             elif command == "help":
@@ -64,8 +65,9 @@ def application_cli():
                     continue
                 load_parts = parts[1].split(maxsplit=1)
                 file_path = load_parts[0]
+                document_name = os.path.basename(file_path)
                 file_content = load_document(file_path)
-                create_doc(db_name, file_path, file_content)
+                create_doc(db_name, document_name, file_content)
 
             elif command == "read":
                 if len(parts) < 2:

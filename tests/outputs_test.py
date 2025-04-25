@@ -1,4 +1,4 @@
-# tests with ChatGPT and modified
+# tests made with ChatGPT and modified
 import os
 import builtins
 from unittest import mock
@@ -6,7 +6,7 @@ from unittest import mock
 from outputs.writeback import *
 
 def test_write_back_yes(monkeypatch):
-    test_filename = "output.txt"
+    test_filename = "response.txt"
     test_content = "Hello, world!"
 
     # mock input responses: first "y", then filename
@@ -14,13 +14,14 @@ def test_write_back_yes(monkeypatch):
     written_content = write_back(test_content)
 
     # check file created and its content
+    test_path = os.path.join("outputs", test_filename)
     assert written_content == len(test_content)
-    assert os.path.exists(test_filename)
-    with open(test_filename, "r") as f:
+    assert os.path.exists(test_path)
+    with open(test_path, "r") as f:
         assert f.read() == test_content
 
     # clean up
-    os.remove(test_filename)
+    os.remove(test_path)
 
 
 def test_write_back_no(monkeypatch):
