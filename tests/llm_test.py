@@ -4,9 +4,11 @@
 # python -m coverage run -m pytest -s
 # python coverage report -m
 
-import pytest
+import pytest, os
 from analyzer.llm import ask_llm
 from unittest.mock import patch, MagicMock
+
+os.environ["OPENAI_API_KEY"] = "test-key"
 
 @patch("analyzer.llm.client.chat.completions.create")
 def test_ask_llm(mock_create):

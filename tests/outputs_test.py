@@ -1,9 +1,11 @@
 # tests made with ChatGPT and modified
+
 import os
 import builtins
 from unittest import mock
 
 from outputs.writeback import *
+os.environ["OPENAI_API_KEY"] = "test-key"
 
 def test_write_back_yes(monkeypatch,capsys):
     test_filename = "response.txt"

@@ -4,8 +4,10 @@
 # python -m coverage run -m pytest -s
 # python coverage report -m
 
+import os
 from analyzer.feedback import *
 from unittest.mock import patch, MagicMock
+os.environ["OPENAI_API_KEY"] = "test-key"
 
 @patch("analyzer.feedback.client.chat.completions.create")
 def test_provide_feedback(mock_create):

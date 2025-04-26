@@ -4,8 +4,10 @@
 # python -m coverage run -m pytest -s
 # python coverage report -m
 
+import os
 from analyzer.grader import *
 from unittest.mock import patch, MagicMock
+os.environ["OPENAI_API_KEY"] = "test-key"
 
 @patch("analyzer.grader.client.chat.completions.create")
 def test_grade_document(mock_create):

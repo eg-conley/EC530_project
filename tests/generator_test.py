@@ -7,8 +7,10 @@
 # tests made with ChatGPT and modified
 # generator.py tests
 
+import os
 from analyzer.generator import *
 from unittest.mock import patch, MagicMock
+os.environ["OPENAI_API_KEY"] = "test-key"
 
 
 @patch("analyzer.generator.client.chat.completions.create")
