@@ -46,6 +46,7 @@ jobs:
       # Run tests
       - name: Run Tests
         run: |
+          export OPENAI_API_KEY="test-key"
           source venv/bin/activate
           python -m coverage run -m pytest -s
           coverage report -m
