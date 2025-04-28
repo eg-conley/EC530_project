@@ -77,7 +77,7 @@ To run the application, please follow these steps:
  2. Set up your virtual python environment if needed
     - You can run `python3 -m venv venv` and then `source venv/bin/activate`
  3. In the folder where you clone the repository, run: `pip install .`
- 4. After the application is built, you can run `autoteacherai` to start it!
+ 4. After the application is built, you can run `autoteacherai` to start it.
 
 ### Example Uses
 * Initial startup entering database to use `[database_name].db`
