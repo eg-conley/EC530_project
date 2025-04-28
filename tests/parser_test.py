@@ -8,7 +8,7 @@ import pytest
 import fitz  # PyMuPDF
 import docx # python-docx for DOCX
 
-from analyzer.parser import *
+from autoteacherai.analyzer.parser import *
 
 def test_load_document_pdf(tmp_path):
     pdf_path = tmp_path / "test.pdf"

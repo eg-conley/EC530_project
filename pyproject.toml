@@ -1,0 +1,27 @@
+[project]
+name = "autoteacherai"
+version = "0.1.0"
+description = "An interactive CLI tool to analyze, generate, and grade documents."
+authors = [
+    { name="Ella Conley", email="egconley@bu.edu" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pytest",
+    "coverage",
+    "openai",
+    "PyMuPDF",
+    "python-docx",
+    "dotenv"
+]
+
+[project.scripts]
+autoteacherai = "autoteacherai.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]

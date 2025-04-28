@@ -5,7 +5,7 @@
 # python coverage report -m
 
 import os
-from analyzer.feedback import *
+from autoteacherai.analyzer.feedback import *
 from unittest.mock import patch, MagicMock
 os.environ["OPENAI_API_KEY"] = "test-key"
 

@@ -1,5 +1,5 @@
 # grader.py grades uploaded documents/responses
-from analyzer.llm import *
+from autoteacherai.analyzer.llm import *
 
 def grade_document(content, rubric):
     prompt = (

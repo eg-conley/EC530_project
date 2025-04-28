@@ -1,10 +1,10 @@
 # cli.py defines a simple, interactive cli for users
-from database.operations import *
-from analyzer.parser import *
-from analyzer.feedback import *
-from analyzer.grader import *
-from analyzer.generator import *
-from outputs.writeback import *
+from autoteacherai.database.operations import *
+from autoteacherai.analyzer.parser import *
+from autoteacherai.analyzer.feedback import *
+from autoteacherai.analyzer.grader import *
+from autoteacherai.analyzer.generator import *
+from autoteacherai.outputs.writeback import *
 
 # display available commands
 def print_help():
@@ -54,7 +54,7 @@ def application_cli():
             # choose correct function based on input
             if command == "exit":
                 print("Exiting...")
-                break
+                exit(0)
 
             elif command == "help":
                 print_help()

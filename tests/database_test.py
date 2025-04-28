@@ -4,8 +4,8 @@ import os
 import pytest
 import sqlite3
 
-from database.models import *
-from database.operations import *
+from autoteacherai.database.models import *
+from autoteacherai.database.operations import *
 
 # Use a temporary test database to isolate testing
 TEST_DB = "tests.db"

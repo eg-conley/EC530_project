@@ -1,6 +1,6 @@
 # generator.py creates short quizzes, study guides, and other material
 # using OpenAI's LLM API, add functionality to generate: multiple choice, true/false, fill in the blank, flashcards, study guides
-from analyzer.llm import *
+from autoteacherai.analyzer.llm import *
 
 def create_mc(content, number):
     prompt = (

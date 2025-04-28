@@ -4,7 +4,7 @@ import os
 import builtins
 from unittest import mock
 
-from outputs.writeback import *
+from autoteacherai.outputs.writeback import *
 os.environ["OPENAI_API_KEY"] = "test-key"
 
 def test_write_back_yes(monkeypatch,capsys):

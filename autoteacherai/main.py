@@ -1,6 +1,5 @@
 # main.py runs the application and introduces a simple CLI
-from analyzer import *
-from analyzer.cli import *
+from autoteacherai.analyzer.cli import *
 
 def main():
     try:
