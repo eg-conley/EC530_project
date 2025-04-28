@@ -13,7 +13,7 @@ from unittest.mock import patch, MagicMock
 os.environ["OPENAI_API_KEY"] = "test-key"
 
 
-@patch("analyzer.generator.client.chat.completions.create")
+@patch("autoteacherai.analyzer.generator.client.chat.completions.create")
 def test_create_mc(mock_create):
     # mock a valid OpenAI-style response
     mock_response = MagicMock()
@@ -29,7 +29,7 @@ def test_create_mc(mock_create):
     assert response == "MC Questions"
     mock_create.assert_called_once()
 
-@patch("analyzer.generator.client.chat.completions.create")
+@patch("autoteacherai.analyzer.generator.client.chat.completions.create")
 def test_create_tf(mock_create):
     # mock a valid OpenAI-style response
     mock_response = MagicMock()
@@ -45,7 +45,7 @@ def test_create_tf(mock_create):
     assert response == "TF Questions"
     mock_create.assert_called_once()
 
-@patch("analyzer.generator.client.chat.completions.create")
+@patch("autoteacherai.analyzer.generator.client.chat.completions.create")
 def test_create_fill(mock_create):
     # mock a valid OpenAI-style response
     mock_response = MagicMock()
@@ -61,7 +61,7 @@ def test_create_fill(mock_create):
     assert response == "Fill in blank Questions"
     mock_create.assert_called_once()
 
-@patch("analyzer.generator.client.chat.completions.create")
+@patch("autoteacherai.analyzer.generator.client.chat.completions.create")
 def test_create_fc(mock_create):
     # mock a valid OpenAI-style response
     mock_response = MagicMock()
@@ -77,7 +77,7 @@ def test_create_fc(mock_create):
     assert response == "Flashcards"
     mock_create.assert_called_once()
 
-@patch("analyzer.generator.client.chat.completions.create")
+@patch("autoteacherai.analyzer.generator.client.chat.completions.create")
 def test_create_sg(mock_create):
     # mock a valid OpenAI-style response
     mock_response = MagicMock()

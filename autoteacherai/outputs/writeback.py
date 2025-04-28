@@ -10,7 +10,7 @@ def write_back(content):
 
     if write_flag.lower() == "y":
         write_file_name = input("Enter the new file name: ")
-        file_path = os.path.join("outputs", write_file_name)
+        file_path = os.path.join("documents", write_file_name)
         with open(file_path, "w") as file:
             return file.write(content)
     else:

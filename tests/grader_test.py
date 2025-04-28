@@ -9,7 +9,7 @@ from autoteacherai.analyzer.grader import *
 from unittest.mock import patch, MagicMock
 os.environ["OPENAI_API_KEY"] = "test-key"
 
-@patch("analyzer.grader.client.chat.completions.create")
+@patch("autoteacherai.analyzer.grader.client.chat.completions.create")
 def test_grade_document(mock_create):
     # mock a valid OpenAI-style response
     mock_response = MagicMock()

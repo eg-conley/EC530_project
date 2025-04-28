@@ -46,7 +46,7 @@ EC530_project/ \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- models.py #outlines the table schema for the files \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- operations.py #defines CRUD operations for the documents the user will be uploading and analyzing \
 &nbsp;&nbsp;&nbsp; |-- outputs/ \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- writeback.py #writes any produced content back to a txt file \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- writeback.py #writes any produced content back to a txt file in the documents folder \
 &nbsp;&nbsp;&nbsp; |--  main.py #runs the application and introduces a simple CLI\
 |-- documents/ \
 &nbsp;&nbsp;&nbsp;  |-- Countries_of_the_World.pdf #sample pdf file \

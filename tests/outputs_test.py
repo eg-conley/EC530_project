@@ -5,7 +5,6 @@ import builtins
 from unittest import mock
 
 from autoteacherai.outputs.writeback import *
-os.environ["OPENAI_API_KEY"] = "test-key"
 
 def test_write_back_yes(monkeypatch,capsys):
     test_filename = "response.txt"
@@ -20,7 +19,7 @@ def test_write_back_yes(monkeypatch,capsys):
     captured = capsys.readouterr()
     assert "Please enter either 'y' or 'n'" in captured.out
 
-    test_path = os.path.join("outputs", test_filename)
+    test_path = os.path.join("documents", test_filename)
     assert written_content == len(test_content)
     assert os.path.exists(test_path)
     with open(test_path, "r") as f:
