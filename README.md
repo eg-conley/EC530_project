@@ -72,10 +72,12 @@ EC530_project/ \
 * The required packages are in the requirements.txt file
 
 ### Steps
- 1. 
- 2. 
- 3. 
- 4. 
+To run the application, please follow these steps:
+ 1. Download the files by cloning this repository: `git clone https://github.com/eg-conley/EC530_project.git`
+ 2. Set up your virtual python environment if needed
+    - You can run `python3 -m venv venv` and then `source venv/bin/activate`
+ 3. In the folder where you clone the repository, run: `pip install .`
+ 4. After the application is built, you can run `autoteacherai` to start it!
 
 ### Example Uses
 * Initial startup entering database to use `[database_name].db`
