@@ -34,24 +34,26 @@ Welcome to AutoTeacher AI, the portal where all of your document needs can be fu
 
 ## Relevant File Structure
 EC530_project/ \
-|-- analyzer/ \
-&nbsp;&nbsp;&nbsp;  |-- cli.py #defines a simple, interactive cli for users \
-&nbsp;&nbsp;&nbsp;  |-- feedback.py #generates feedback on the uploaded documents after they are analyzed \
-&nbsp;&nbsp;&nbsp;  |-- generator.py #creates short quizzes, study guides, and other material \
-&nbsp;&nbsp;&nbsp;  |-- grader.py #grades uploaded documents/responses \
-&nbsp;&nbsp;&nbsp;  |-- llm.py #uses OpenAI's API to generate answers to the respective prompts \
-&nbsp;&nbsp;&nbsp;  |-- parser.py #reads the documents (PDF, DOCX, txt) \
-|-- database/ \
-&nbsp;&nbsp;&nbsp;  |-- models.py #outlines the table schema for the files \
-&nbsp;&nbsp;&nbsp;  |-- operations.py #defines CRUD operations for the documents the user will be uploading and analyzing \
+|-- autoteacherai/ \
+&nbsp;&nbsp;&nbsp; |-- analyzer/ \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- cli.py #defines a simple, interactive cli for users \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- feedback.py #generates feedback on the uploaded documents after they are analyzed \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- generator.py #creates short quizzes, study guides, and other material \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- grader.py #grades uploaded documents/responses \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- llm.py #uses OpenAI's API to generate answers to the respective prompts \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- parser.py #reads the documents (PDF, DOCX, txt) \
+&nbsp;&nbsp;&nbsp; |-- database/ \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- models.py #outlines the table schema for the files \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- operations.py #defines CRUD operations for the documents the user will be uploading and analyzing \
+&nbsp;&nbsp;&nbsp; |-- outputs/ \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |-- writeback.py #writes any produced content back to a txt file \
+&nbsp;&nbsp;&nbsp; |--  main.py #runs the application and introduces a simple CLI\
 |-- documents/ \
 &nbsp;&nbsp;&nbsp;  |-- Countries_of_the_World.pdf #sample pdf file \
 &nbsp;&nbsp;&nbsp;  |-- Layers_of_the_Ocean_Rubric.pdf #sample pdf file \
 &nbsp;&nbsp;&nbsp;  |-- Layers_of_the_Ocean_.docx #sample docx file \
 &nbsp;&nbsp;&nbsp;  |-- Water_Cycle #sample txt file \
 |-- documents.db #database preloaded with some example documents \
-|-- outputs/ \
-&nbsp;&nbsp;&nbsp;  |-- writeback.py #writes any produced content back to a txt file \
 |-- tests/ \
 &nbsp;&nbsp;&nbsp;  |-- cli_test.py #tests cli.py functions \
 &nbsp;&nbsp;&nbsp;  |-- database_test.py #tests database file functions \
@@ -61,7 +63,6 @@ EC530_project/ \
 &nbsp;&nbsp;&nbsp;  |-- llm_test #tests llm.py functions \
 &nbsp;&nbsp;&nbsp;  |-- outputs_test.py #tests output file functions\
 &nbsp;&nbsp;&nbsp;  |-- parser_test #tests parser.py functions \
-|--  main.py #runs the application and introduces a simple CLI\
 |-- requirements.txt #lists the required packages
 |-- tests.db #database required for test files
 
