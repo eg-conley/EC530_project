@@ -76,8 +76,10 @@ To run the application, please follow these steps:
  1. Download the files by cloning this repository: `git clone https://github.com/eg-conley/EC530_project.git`
  2. Set up your virtual python environment if needed
     - You can run `python3 -m venv venv` and then `source venv/bin/activate`
- 3. In the folder where you clone the repository, run: `pip install .`
- 4. After the application is built, you can run `autoteacherai` to start it.
+ 3. You will need to create a **.env** file and input your generated OpenAI API key
+    - It might look something like this:<img width="1317" alt="Screenshot 2025-04-28 at 5 58 09 PM" src="https://github.com/user-attachments/assets/b938cb38-1cee-4b30-93e0-d44bcfdef4e1" />
+ 4. In the folder where you clone the repository, run: `pip install .`
+ 5. After the application is built, you can run `autoteacherai` to start it.
 
 ### Example Uses
 * Initial startup entering database to use `[database_name].db`
